@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import NumberButtons from "./NumberButtons";
 import Display from "./Display";
-import { Answer } from "./Answer";
+import Answer from "./Answer";
 
 export default function Home() {
   const [history, setHistory] = useState("");
