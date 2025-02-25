@@ -1,5 +1,4 @@
 import React from "react";
-import NumberButton from "./NumberButton";
 import RowButtons from "./RowButtons";
 
 function NumberButtons({fn}:({fn:(val:string)=>void})) {
@@ -10,7 +9,7 @@ function NumberButtons({fn}:({fn:(val:string)=>void})) {
     ["1", "2", "3", "+"],
     ["SCI", "0", ".", "="],
   ];
-  let getNumberButtons = () => {
+  const getNumberButtons = () => {
     return nums.map((item,index) => <RowButtons key={index} rowValues={item} fn={fn}/>);
   };
   return (

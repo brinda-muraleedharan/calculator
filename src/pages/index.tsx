@@ -6,21 +6,21 @@ import { Answer } from "./Answer";
 export default function Home() {
   const [history, setHistory] = useState("");
   const [result,setResult]=useState("");
-  let test=useEffect(()=>{
+  useEffect(()=>{
     evaluateExpression(history)
   },[history])
   function evaluateExpression(expression:string) {
     try {
-      let answer=new Function(`return (${expression})`)();
+      const answer=new Function(`return (${expression})`)();
       console.log(answer);
       setResult(answer);
     } catch (error) {
-        //return "Invalid expression";
+        return "Invalid expression";
     }
 }
 
-  let operations: string[] = ["+", "-", "/", "X","*"];
-  let fn: (val: string) => void = (val) => {
+  const operations: string[] = ["+", "-", "/", "X","*"];
+  const fn: (val: string) => void = (val) => {
     val=val=="X"?"*":val;
     if (val == "=") {
       setHistory("");
