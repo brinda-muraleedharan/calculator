@@ -10,14 +10,14 @@ export default function Home() {
     evaluateExpression(history)
   },[history])
   function evaluateExpression(expression:string) {
-    const answer=new Function(`return (${expression})`)();
+    
+    try {
+      const answer=new Function(`return (${expression})`)();
       console.log(answer);
       setResult(answer);
-    /*try {
-      
     } catch (error) {
-        return "Invalid expression";
-    }*/
+        return "Invalid expression"+error;
+    }
 }
 
   const operations: string[] = ["+", "-", "/", "X","*"];
